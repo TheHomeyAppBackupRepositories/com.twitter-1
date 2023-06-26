@@ -1,0 +1,11 @@
+{
+  "name": "com.twitter",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "homey": "^2.9.7"
+  },
+  "dependencies": {
+    "twitter-api-client": "^1.3.2"
+  }
+}

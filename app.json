@@ -1,0 +1,127 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.twitter",
+  "version": "1.0.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Twitter"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "brandColor": "#1C98EF",
+  "description": {
+    "en": "Happening now."
+  },
+  "category": [
+    "internet"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Athom B.V.",
+    "email": "emile@athom.nl"
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "update-status",
+        "title": {
+          "en": "Send a Tweet",
+          "nl": "Maak een Tweet"
+        },
+        "titleFormatted": {
+          "en": "Tweet [[status]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "title": {
+              "en": "Status"
+            },
+            "placeholder": {
+              "en": "I love my #homey!"
+            }
+          }
+        ]
+      },
+      {
+        "id": "update-status-with-image",
+        "title": {
+          "en": "Send a Tweet with a photo",
+          "nl": "Maak een Tweet met foto"
+        },
+        "titleFormatted": {
+          "en": "Tweet [[status]] with image [[droptoken]]"
+        },
+        "droptoken": "image",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "title": {
+              "en": "Status"
+            },
+            "placeholder": {
+              "en": "I love my #homey!"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "user",
+      "name": {
+        "en": "Twitter User"
+      },
+      "class": "other",
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/user/assets/images/large.png",
+        "small": "/drivers/user/assets/images/small.png"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    }
+  ]
+}

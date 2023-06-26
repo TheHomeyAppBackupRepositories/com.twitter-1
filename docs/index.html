@@ -1,0 +1,9 @@
+<script type="text/javascript">
+const search = new URLSearchParams(window.location.search);
+if( search.has('oauth_verifier' ) ) {
+  const oauth_verifier = search.get('oauth_verifier');
+  window.location.href = 'https://callback.athom.com/oauth2/callback?code=' + oauth_verifier;
+} else {
+  alert('Something went wrong... please try again.');
+}
+</script>

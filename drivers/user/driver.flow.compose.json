@@ -1,0 +1,49 @@
+{
+  "actions": [
+    {
+      "id": "update-status",
+      "title": {
+        "en": "Send a Tweet",
+        "nl": "Maak een Tweet"
+      },
+      "titleFormatted": {
+        "en": "Tweet [[status]]"
+      },
+      "args": [
+        {
+          "name": "status",
+          "type": "text",
+          "title": {
+            "en": "Status"
+          },
+          "placeholder": {
+            "en": "I love my #homey!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "update-status-with-image",
+      "title": {
+        "en": "Send a Tweet with a photo",
+        "nl": "Maak een Tweet met foto"
+      },
+      "titleFormatted": {
+        "en": "Tweet [[status]] with image [[droptoken]]"
+      },
+      "droptoken": "image",
+      "args": [
+        {
+          "name": "status",
+          "type": "text",
+          "title": {
+            "en": "Status"
+          },
+          "placeholder": {
+            "en": "I love my #homey!"
+          }
+        }
+      ]
+    }
+  ]
+}
